@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cpm",
+  "version": "${version}",
+  "name": "Compressed",
+  "description": "A mod add the compressed block of all kinds of blocks",
+  "authors": [
+    "ARMrAmzing"
+  ],
+  "contact": {},
+  "license": "GPL-2.0",
+  "icon": "assets/cpm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.xenfork.compressed.client.CompressedClient"
+    ],
+    "main": [
+      "io.github.xenfork.compressed.Compressed"
+    ]
+  },
+  "mixins": [
+    "Compressed.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
