@@ -1,18 +1,3 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "pattern": [
-    "XXX",
-    "XXX",
-    "XXX"
-  ],
-  "key": {
-    "X": {
-      "item": "minecraft:cobblestone"
-    }
-  },
-  "result": {
-    "item": "cpm:compressed_block",
-    "tag": "",
-    "count": 1
-  }
+  "type": "cpm:crafting_special_uncompressing"
 }
