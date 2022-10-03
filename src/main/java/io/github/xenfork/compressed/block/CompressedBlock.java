@@ -16,7 +16,7 @@ public class CompressedBlock extends Block {
             EnumProperty.of("compressed_blocks", CompressedBlocks.class);
 
     public static final IntProperty COMPRESSED_TIME =
-            IntProperty.of("compressed_time", 1, 16);;
+            IntProperty.of("compressed_time", 1, 16);
 
     public CompressedBlock(AbstractBlock.Settings settings) {
         super(settings);
@@ -25,13 +25,17 @@ public class CompressedBlock extends Block {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(COMPRESSED_TIME,COMPRESSED_BLOCKS);
+        builder.add(COMPRESSED_TIME, COMPRESSED_BLOCKS);
     }
 
     public static int getCompressedTime(ItemStack stack) {
-        assert stack.getNbt() != null;
-        System.out.println(stack.getNbt().getInt("compressed_time"));
-        return stack.getNbt().getInt("compressed_time");
+        NbtCompound nbt = stack.getNbt();
+        if (nbt != null) {
+            int tm = nbt.getInt("compressed_time");
+            // TODO: 2022/10/3 Remove it
+            System.out.println(tm);
+            return tm;
+        }
+        return 0;
     }
-
 }
